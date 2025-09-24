@@ -1,0 +1,4 @@
+CREATE DATABASE ComexDB;
+GO
+USE ComexDB;
+GO
