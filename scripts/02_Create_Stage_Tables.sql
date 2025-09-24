@@ -1,0 +1,34 @@
+USE ComexDB;
+GO
+
+-- Tabela de Países
+CREATE TABLE stage_co_pais (
+	CO_PAIS VARCHAR(5),
+	CO_PAIS_ISON3 VARCHAR(5),
+	CO_PAIS_ISOA3 VARCHAR(5),
+	NO_PAIS VARCHAR(255),
+	NO_PAIS_ING VARCHAR(255),
+	NO_PAIS_ESP VARCHAR(255)
+);
+GO
+
+-- Tabela de Código da Nomenclatura Comum Mercosul - NCM
+CREATE TABLE stage_co_ncm (
+    CO_NCM VARCHAR(8),
+    CO_UNID VARCHAR(10),
+    CO_SH6 VARCHAR(6),
+    CO_PPE VARCHAR(10),
+    CO_PPI VARCHAR(10),
+    CO_FAT_AGREG VARCHAR(10),
+    CO_CUCI_ITEM VARCHAR(10),
+    CO_CGCE_N3 VARCHAR(10),
+    CO_SIIT VARCHAR(10),
+    CO_ISIC_CLASSE VARCHAR(10),
+    CO_EXP_SUBSET VARCHAR(10),
+    NO_NCM_POR VARCHAR(2000),
+    NO_NCM_ESP VARCHAR(2000),
+    NO_NCM_ING VARCHAR(2000)
+);
+GO
+
+-- Tabela DE Código da unidade associada ao NCM
