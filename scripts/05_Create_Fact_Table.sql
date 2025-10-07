@@ -1,6 +1,9 @@
 USE ComexDB;
 GO
 
+-- Bloco de Limpeza: Apaga a tabela fato se ela já existir
+DROP TABLE IF EXISTS fMovimentacoes;
+GO
 
 ----------------------------------------------------
 -- Tabela Fato: fMovimentacoes

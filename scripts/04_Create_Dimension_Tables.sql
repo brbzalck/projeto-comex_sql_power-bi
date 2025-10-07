@@ -6,6 +6,15 @@ GO
 -- Transforma os dados brutos em uma dimensão de tempo rica e otimizada.
 ----------------------------------------------------
 
+-- Bloco de Limpeza: Apaga as tabelas de dimensão se elas já existirem
+DROP TABLE IF EXISTS dCalendario;
+DROP TABLE IF EXISTS dPais;
+DROP TABLE IF EXISTS dProduto;
+DROP TABLE IF EXISTS dVia;
+DROP TABLE IF EXISTS dURF;
+DROP TABLE IF EXISTS dUnidade;
+GO
+
 CREATE TABLE dCalendario (
     DATA DATE PRIMARY KEY, 
     ANO INT NOT NULL,
@@ -21,7 +30,7 @@ CREATE TABLE dCalendario (
 GO
 
 INSERT INTO dCalendario (DATA, ANO, MES, DIA, NOME_MES, DIA_SEMANA, TRIMESTRE, FERIADO, NOME_FERIADO, DIA_UTIL)
-SELECT
+SELECT DISTINCT
     -- Cria uma data real a partir das colunas de ano, mês e dia
     DATEFROMPARTS(CO_ANO, CO_MES, CO_DIA) AS DATA,
     CO_ANO AS ANO,
